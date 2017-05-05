@@ -1,0 +1,26 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /assets
+  static_dir: assets
+
+- url: /assets/
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /assets/
+  static_files: apple-touch-icon.png
+  upload: apple-touch-icon\.png
+
+- url: /assets/
+  static_files: style.css
+  upload: style\.css
+
+- url: /.*
+  script: main.app
+  
+libraries:
+- name: ssl
+  version: latest
